@@ -1,0 +1,17 @@
+.right{
+    flex: 1;
+    background: rgb(194, 236, 222);
+}
+
+
+.chat{
+    background: rgb(101, 218, 179); padding:6px 10px; margin:4px; border-radius: 8px;
+}
+
+.button{
+    height: 30px ; background: greenyellow; text-align: center ; padding: 0px 20px;
+}
+
+.green{
+    background: rgb(4, 235, 4);
+}

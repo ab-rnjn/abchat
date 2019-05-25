@@ -1,0 +1,39 @@
+<main style="height: 100vh; width:100hw;" class="flex-h">
+  <!-- <div class="fe"></div> -->
+  <section class="flex-v flex-1" style="justify-content: center; text-align: center; ">
+    <strong style="color:blueviolet;">Login</strong>
+    <form class="flex-vertical" style="justify-content: center;">
+      <div>
+        <input type="text" placeholder="Enter Username" name="username" required [(ngModel)]="user.username">
+      </div>
+      <div>
+        <input type="password" placeholder="Enter Password" name="password" required [(ngModel)]="user.password">
+      </div>
+      <div style="text-align: center;">
+        <button type="submit" (click)="submit()">Login</button>
+      </div>
+    </form>
+  </section>
+  <section class="flex-v flex-1" style="justify-content: center; text-align: center; ">
+    <strong style="color:blueviolet;">New User ?</strong>    <form class="flex-vertical" style="justify-content: center;">
+      <div>
+        <input type="text" placeholder="Enter Name" name="name" required [(ngModel)]="new.name">
+      </div>
+      <div class="padded " style="align-items: center;">
+        <input type="text" placeholder="Enter Username" name="username" required [(ngModel)]="new.username">
+      </div>
+      <div (click)="check()" class="pointer"> Check Username</div>
+
+      <div>
+        <input type="email" placeholder="Enter Email" name="email" required [(ngModel)]="new.email">
+      </div>
+      <div>
+        <input type="password" placeholder="Enter Password" name="password" required [(ngModel)]="new.password">
+      </div>
+      <div style="text-align: center;">
+        <button type="submit" (click)="register()">Sign Up</button>
+      </div>
+    </form>
+  </section>
+
+</main>
