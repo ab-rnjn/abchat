@@ -39,7 +39,7 @@ export class ChatPageComponent implements OnInit, OnDestroy {
     });
   }
   constructor(private chatPageService: ChatPageService, private toastr: ToastrService, private router: Router) {
-    this.socket = socketIo('http://localhost:2000'
+    this.socket = socketIo.connect(
       // , {
       //   transportOptions: {
       //     polling: {
