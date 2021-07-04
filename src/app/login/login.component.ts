@@ -21,7 +21,8 @@ export class LoginComponent implements OnInit {
     private router: Router, 
     private authService: AuthGuard,
     private toastr: ToastrService
-    ) {
+    )
+  {
     this.router.navigate(['']);
   }
 
