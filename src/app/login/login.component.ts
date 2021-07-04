@@ -16,7 +16,12 @@ export class LoginComponent implements OnInit {
   public enter: boolean;
   public new: { name: string, username: string, email: string, password: string };
   // public reply: { error: any, data: any, info: any };
-  constructor(private loginService: LoginService, private router: Router, private authService: AuthGuard, private toastr: ToastrService) {
+  constructor(
+    private loginService: LoginService,
+    private router: Router, 
+    private authService: AuthGuard,
+    private toastr: ToastrService
+    ) {
     this.router.navigate(['']);
   }
 
