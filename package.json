@@ -11,7 +11,6 @@
     "dev": "nodemon ./backed/server.js",
     "init": "npm i",
     "postinstall": "ng build --output-path dist"
-
   },
   "private": true,
   "dependencies": {

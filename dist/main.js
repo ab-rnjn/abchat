@@ -41,7 +41,7 @@ module.exports = ".pointer {\r\n    cursor: pointer;\r\n  }\r\n  \r\n* {\r\n    
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<router-outlet></router-outlet>\n"
+module.exports = "\r\n<router-outlet></router-outlet>\r\n"
 
 /***/ }),
 
@@ -271,7 +271,7 @@ module.exports = ".right{\r\n    flex: 1;\r\n    background: rgb(194, 236, 222);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<main>\n  <section class=\"flex-h\">\n    <div style=\"width:400px; background: rgb(236, 233, 194);  overflow-y: auto;\" class=\"flex-v\">\n      <div style=\"text-align: center; margin:16px; font-size:20px; \">\n        Users\n      </div>\n      <div *ngFor=\"let user of userList; let i = index;\" [ngClass]=\"{'green':user.status}\" class=\"flex-h\"\n        style=\"height: 60px; border-bottom: 2px dotted black;align-items: center; padding:0 20px;\" >\n        <div (click)=\"fetchMessage(user,i)\" style=\"cursor: pointer; font-weight: bolder;\">{{i+1}}. {{user.Name}}</div>\n        <div style=\"align-items: center; margin-left: auto; font-size: 14px\">~ {{user.Username}}</div>\n      </div>\n    </div>\n    <div class=\"flex-1 flex-v\" style=\"height: 100vh; background: rgb(194, 236, 222);padding:30px;\">\n      <div class=\"flex-h center\" style=\"height: 60px; color:brown;\">\n        <div title=\"Name\">{{currentUser.Name}}</div>\n        <div class=\"flex-1\"></div>\n        <div title=\"Email Address\">{{currentUser.Email}}</div>\n        <div class=\"flex-1\"></div>\n        <div class=\"material-icons pointer\" (click)=\"logout()\" title=\"Log Out\">power_settings_new</div>\n      </div>\n      <section class=\"flex-1\" style=\"overflow-y: auto;\">\n        <div *ngFor=\"let message of messageList; let i = index;\" class=\"flex-h center\">\n          <div class=\"flex-1 flex-h \">\n            <div [ngClass]=\"{'flex-1':message.to === currentUser._id}\"></div>\n            <div class=\"chat\">\n              {{message.message}}</div>\n            <!-- <div [ngClass]=\"{'left':message.from !== currentUser._id, 'right':message.from === currentUser._id}\">{{message.message}}</div> -->\n          </div>\n          <div style=\"width:50px; margin-left:20px;\" class=\"material-icons\">{{emoji[message.sentiment]}}</div>\n        </div>\n      </section>\n      <div *ngIf=\"currentUser._id\" style=\"margin-bottom: 50px;\">\n        <input [(ngModel)]=\"currentMessage\" style=\"width: 80%; height: 30px;\">\n        <button (click)=\"sendMessage()\" class=\"button\">send</button>\n      </div>\n    </div>\n  </section>\n</main>"
+module.exports = "<main>\r\n  <section class=\"flex-h\">\r\n    <div style=\"width:400px; background: rgb(236, 233, 194);  overflow-y: auto;\" class=\"flex-v\">\r\n      <div style=\"text-align: center; margin:16px; font-size:20px; \">\r\n        Users\r\n      </div>\r\n      <div *ngFor=\"let user of userList; let i = index;\" [ngClass]=\"{'green':user.status}\" class=\"flex-h\"\r\n        style=\"height: 60px; border-bottom: 2px dotted black;align-items: center; padding:0 20px;\" >\r\n        <div (click)=\"fetchMessage(user,i)\" style=\"cursor: pointer; font-weight: bolder;\">{{i+1}}. {{user.Name}}</div>\r\n        <div style=\"align-items: center; margin-left: auto; font-size: 14px\">~ {{user.Username}}</div>\r\n      </div>\r\n    </div>\r\n    <div class=\"flex-1 flex-v\" style=\"height: 100vh; background: rgb(194, 236, 222);padding:30px;\">\r\n      <div class=\"flex-h center\" style=\"height: 60px; color:brown;\">\r\n        <div title=\"Name\">{{currentUser.Name}}</div>\r\n        <div class=\"flex-1\"></div>\r\n        <div title=\"Email Address\">{{currentUser.Email}}</div>\r\n        <div class=\"flex-1\"></div>\r\n        <div class=\"material-icons pointer\" (click)=\"logout()\" title=\"Log Out\">power_settings_new</div>\r\n      </div>\r\n      <section class=\"flex-1\" style=\"overflow-y: auto;\">\r\n        <div *ngFor=\"let message of messageList; let i = index;\" class=\"flex-h center\">\r\n          <div class=\"flex-1 flex-h \">\r\n            <div [ngClass]=\"{'flex-1':message.to === currentUser._id}\"></div>\r\n            <div class=\"chat\">\r\n              {{message.message}}</div>\r\n            <!-- <div [ngClass]=\"{'left':message.from !== currentUser._id, 'right':message.from === currentUser._id}\">{{message.message}}</div> -->\r\n          </div>\r\n          <div style=\"width:50px; margin-left:20px;\" class=\"material-icons\">{{emoji[message.sentiment]}}</div>\r\n        </div>\r\n      </section>\r\n      <div *ngIf=\"currentUser._id\" style=\"margin-bottom: 50px;\">\r\n        <input [(ngModel)]=\"currentMessage\" style=\"width: 80%; height: 30px;\">\r\n        <button (click)=\"sendMessage()\" class=\"button\">send</button>\r\n      </div>\r\n    </div>\r\n  </section>\r\n</main>"
 
 /***/ }),
 
@@ -309,7 +309,7 @@ var ChatPageComponent = /** @class */ (function () {
         this.toastr = toastr;
         this.router = router;
         this.messageMap = {};
-        this.socket = socket_io_client__WEBPACK_IMPORTED_MODULE_6__('http://localhost:2000'
+        this.socket = socket_io_client__WEBPACK_IMPORTED_MODULE_6__["connect"](
         // , {
         //   transportOptions: {
         //     polling: {
@@ -520,7 +520,7 @@ module.exports = "\r\ninput{\r\n    background: rgb(211, 247, 129);\r\n    paddi
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<main style=\"height: 100vh; width:100hw;\" class=\"flex-h\">\n  <!-- <div class=\"fe\"></div> -->\n  <section class=\"flex-v flex-1\" style=\"justify-content: center; text-align: center; \">\n    <strong style=\"color:blueviolet;\">Login</strong>\n    <form class=\"flex-vertical\" style=\"justify-content: center;\">\n      <div>\n        <input type=\"text\" placeholder=\"Enter Username\" name=\"username\" required [(ngModel)]=\"user.username\">\n      </div>\n      <div>\n        <input type=\"password\" placeholder=\"Enter Password\" name=\"password\" required [(ngModel)]=\"user.password\">\n      </div>\n      <div style=\"text-align: center;\">\n        <button type=\"submit\" (click)=\"submit()\">Login</button>\n      </div>\n    </form>\n  </section>\n  <section class=\"flex-v flex-1\" style=\"justify-content: center; text-align: center; \">\n    <strong style=\"color:blueviolet;\">New User ?</strong>    <form class=\"flex-vertical\" style=\"justify-content: center;\">\n      <div>\n        <input type=\"text\" placeholder=\"Enter Name\" name=\"name\" required [(ngModel)]=\"new.name\">\n      </div>\n      <div class=\"padded \" style=\"align-items: center;\">\n        <input type=\"text\" placeholder=\"Enter Username\" name=\"username\" required [(ngModel)]=\"new.username\">\n      </div>\n      <div (click)=\"check()\" class=\"pointer\"> Check Username</div>\n\n      <div>\n        <input type=\"email\" placeholder=\"Enter Email\" name=\"email\" required [(ngModel)]=\"new.email\">\n      </div>\n      <div>\n        <input type=\"password\" placeholder=\"Enter Password\" name=\"password\" required [(ngModel)]=\"new.password\">\n      </div>\n      <div style=\"text-align: center;\">\n        <button type=\"submit\" (click)=\"register()\">Sign Up</button>\n      </div>\n    </form>\n  </section>\n\n</main>"
+module.exports = "<main style=\"height: 100vh; width:100hw;\" class=\"flex-h\">\r\n  <!-- <div class=\"fe\"></div> -->\r\n  <section class=\"flex-v flex-1\" style=\"justify-content: center; text-align: center; \">\r\n    <strong style=\"color:blueviolet;\">Login</strong>\r\n    <form class=\"flex-vertical\" style=\"justify-content: center;\">\r\n      <div>\r\n        <input type=\"text\" placeholder=\"Enter Username\" name=\"username\" required [(ngModel)]=\"user.username\">\r\n      </div>\r\n      <div>\r\n        <input type=\"password\" placeholder=\"Enter Password\" name=\"password\" required [(ngModel)]=\"user.password\">\r\n      </div>\r\n      <div style=\"text-align: center;\">\r\n        <button type=\"submit\" (click)=\"submit()\">Login</button>\r\n      </div>\r\n    </form>\r\n  </section>\r\n  <section class=\"flex-v flex-1\" style=\"justify-content: center; text-align: center; \">\r\n    <strong style=\"color:blueviolet;\">New User ?</strong>    <form class=\"flex-vertical\" style=\"justify-content: center;\">\r\n      <div>\r\n        <input type=\"text\" placeholder=\"Enter Name\" name=\"name\" required [(ngModel)]=\"new.name\">\r\n      </div>\r\n      <div class=\"padded \" style=\"align-items: center;\">\r\n        <input type=\"text\" placeholder=\"Enter Username\" name=\"username\" required [(ngModel)]=\"new.username\">\r\n      </div>\r\n      <div (click)=\"check()\" class=\"pointer\"> Check Username</div>\r\n\r\n      <div>\r\n        <input type=\"email\" placeholder=\"Enter Email\" name=\"email\" required [(ngModel)]=\"new.email\">\r\n      </div>\r\n      <div>\r\n        <input type=\"password\" placeholder=\"Enter Password\" name=\"password\" required [(ngModel)]=\"new.password\">\r\n      </div>\r\n      <div style=\"text-align: center;\">\r\n        <button type=\"submit\" (click)=\"register()\">Sign Up</button>\r\n      </div>\r\n    </form>\r\n  </section>\r\n\r\n</main>"
 
 /***/ }),
 
@@ -634,7 +634,10 @@ var LoginComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./login.component.html */ "./src/app/login/login.component.html"),
             styles: [__webpack_require__(/*! ./login.component.css */ "./src/app/login/login.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_login_service__WEBPACK_IMPORTED_MODULE_2__["LoginService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"], _auth_auth_guard_service__WEBPACK_IMPORTED_MODULE_4__["AuthGuard"], ngx_toastr__WEBPACK_IMPORTED_MODULE_5__["ToastrService"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_login_service__WEBPACK_IMPORTED_MODULE_2__["LoginService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"],
+            _auth_auth_guard_service__WEBPACK_IMPORTED_MODULE_4__["AuthGuard"],
+            ngx_toastr__WEBPACK_IMPORTED_MODULE_5__["ToastrService"]])
     ], LoginComponent);
     return LoginComponent;
 }());
@@ -747,7 +750,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! F:\projects\abchat\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\abhishekr\Documents\spoonshot\abchat\src\main.ts */"./src/main.ts");
 
 
 /***/ }),
